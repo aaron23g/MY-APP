@@ -1,0 +1,59 @@
+.results {
+  display: grid;
+  column-gap: 14px;
+  row-gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+  margin-top: 50px;
+  justify-content: space-around;
+}
+
+.filter-container {
+  display: flex; /* Use flexbox for better alignment */
+  align-items: center;
+  border-radius: 5px; /* Center items vertically */
+}
+
+input[type="text"] {
+  border: solid 2px blue; /* Box-like border */
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 4px;
+  display: inline-block;
+  width: 30%;
+  transition: border-color 0.3s; /* Add transition for smoother effect */
+  outline: none; /* Remove default outline */
+}
+
+input[type="text"]:focus {
+  border-color: darkblue; /* Change border color on focus */
+}
+
+button {
+  padding: 10px 15px; /* Added padding for better button appearance */
+  border: solid 2px var(--primary-color); /* Increased border thickness */
+  background: blue;
+  color: white; /* Changed text color to white for contrast */
+  border-radius: 8px;
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s, border-color 0.3s; /* Add transition effects */
+}
+
+button:hover {
+  background: darkblue; /* Change background on hover */
+  border-color: darkblue; /* Change border color on hover */
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+  .results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  input[type="text"] {
+    width: 70%;
+  }
+}
+
+@media (max-width: 499px) {
+  .results {
+    grid-template-columns: 1fr;
+  }
+}
